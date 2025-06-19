@@ -1,0 +1,19 @@
+services:
+  research-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile.research-agent
+    volumes:
+      - .:/app
+    working_dir: /app
+
+  streamlit-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit-app
+    command: streamlit run streamlit_app/app.py
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    working_dir: /app
