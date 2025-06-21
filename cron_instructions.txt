@@ -1,0 +1,4 @@
+
+# Add to crontab with `crontab -e`
+# This runs every Monday at 8 AM
+0 8 * * 1 cd ~/ai_research_agent_final && bash deploy.sh >> cron.log 2>&1
